@@ -1,22 +1,38 @@
-<div *ngIf="!auth_profil.authenticated()">
-   <form [formGroup]="userform" (submit) = "saveUser()">
-          <div class="form-group">
-            <label >Firstname:</label>
-            <input type="text" class="form-control"  placeholder="First name" formControlName="firstname">
+<br />
+<div class="container" *ngIf="!auth_profil.authenticated()">
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
+    <form [formGroup]="userform" (submit)="saveUser()">
+          <div class="row myborder">
+              <h4 style="color: gray; margin: initial; margin-bottom: 10px;">Sign Up Now. It's Free So Why Not!</h4>
+              <hr>
+              <div class="input-group margin-bottom-20">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user mycolor"></i></span>
+                <input size="60" maxlength="255" class="form-control" placeholder="First Name" formControlName="firstname" id="UserRegistration_username"
+                  type="text">
+              </div>
+              <div class="input-group margin-bottom-20">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user mycolor"></i></span>
+                <input size="60" maxlength="255" class="form-control" placeholder="Last Name" formControlName="lastname" id="UserRegistration_lname"
+                  type="text">
+              </div>
+              <div class="input-group margin-bottom-20">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user mycolor"></i></span>
+                <input size="60" maxlength="255" class="form-control" placeholder="Email address" formControlName="email" id="UserRegistration_fname"
+                  type="text">
+              </div>
+              <div class="input-group margin-bottom-20">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-lock mycolor"></i></span>  
+                <input size="60" maxlength="255" class="form-control" placeholder="Password" formControlName="password" id="UserRegistration_password"
+                  type="password">
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <button class="btn-u pull-left" type="submit" [disabled]="!userform.valid">Sign Up</button>
+                </div>
+              </div>
           </div>
-          <div class="form-group">
-            <label >Lastname:</label>
-            <input type="text" class="form-control" placeholder="Last name" formControlName="lastname">
-          </div>
-          <div class="form-group">
-            <label >Email:</label>
-            <input type="text" class="form-control"  placeholder="Email" formControlName="email">
-          </div>
-          <div class="form-group">
-            <label >Password:</label>
-            <input type="text" class="form-control"  placeholder="Password" formControlName="password">
-          </div>
-          <br>
-            <button type="submit" [disabled] = "!userform.valid">Submit</button>
-  </form>
-</div>
+    </form>
+    <div class="col-md-2"></div>
+  </div>
+  </div>
