@@ -1,0 +1,22 @@
+<div *ngIf="!auth_profil.authenticated()">
+   <form [formGroup]="userform" (submit) = "saveUser()">
+          <div class="form-group">
+            <label >Firstname:</label>
+            <input type="text" class="form-control"  placeholder="First name" formControlName="firstname">
+          </div>
+          <div class="form-group">
+            <label >Lastname:</label>
+            <input type="text" class="form-control" placeholder="Last name" formControlName="lastname">
+          </div>
+          <div class="form-group">
+            <label >Email:</label>
+            <input type="text" class="form-control"  placeholder="Email" formControlName="email">
+          </div>
+          <div class="form-group">
+            <label >Password:</label>
+            <input type="text" class="form-control"  placeholder="Password" formControlName="password">
+          </div>
+          <br>
+            <button type="submit" [disabled] = "!userform.valid">Submit</button>
+  </form>
+</div>

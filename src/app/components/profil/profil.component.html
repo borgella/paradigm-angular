@@ -1,0 +1,52 @@
+<div *ngIf="!auth_profil.click_profile">
+    <div class="row">
+
+        <div class=" col-md-3">
+            <div id="table" class="panel panel-default">
+                <div class="panel-heading">{{auth_profil.user.first_name}} {{auth_profil.user.last_name}}</div>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Tweets</th>
+                                    <th>Abonnements</th>
+                                    <th>Abonnés</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>{{auth_profil.user.tweets.length}}</td>
+                                    <td>{{auth_profil.user.subscribers.length}}</td>
+                                    <td>{{auth_profil.user.followers.length}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class=" col-md-6">
+
+            <div id="suggestion" class="panel panel-default">
+                <div *ngFor="let tweet of auth_profil.user.tweets">
+                    <div class="panel-body">
+                        <div class='input-group input-group-md'>
+                            <input type='text' class='form-control' placeholder="{{tweet.tweet}}">
+                            <span class='input-group-btn'>
+                                <button  class ='btn-supprimer btn btn-default'  (click)= "deleteTweet(tweet)" >Supprimer</button>
+                             </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class=" col-md-3" *ngIf="auth_profil.getSuggestionsLength() > 0 ">
+            <app-suggestions> </app-suggestions>
+        </div>
+
+    </div>
+</div>
