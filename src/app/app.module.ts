@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { TheRoutesModule } from './app.module.routes';
 
 import { provideAuth } from 'angular2-jwt';
 import { HttpService } from './service/app.http.service';
@@ -18,6 +19,7 @@ import { SuggestionsComponent } from './components/suggestions/suggestions.compo
 import { UserFeedComponent } from './components/userfeed/userfeed.component';
 import { ProfilComponent } from './components/profil/profil.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +35,9 @@ import { ProfilComponent } from './components/profil/profil.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    ReactiveFormsModule,
+    HttpModule,
+    TheRoutesModule
   ],
   providers: [HttpService, AppProfileService, Auth0HttpService, provideAuth({
       headerName: 'Authorization',
