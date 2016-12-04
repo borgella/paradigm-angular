@@ -9,10 +9,26 @@ import { AppProfileService } from './service/app.auth.service';
 import { Auth0HttpService } from './service/app.authHttp.service';
 
 import { AppComponent } from './app.component';
+import { AccueilComponent } from './components/accueil/accueil.component';
+import { NavbarComponent} from './components/navbar/navbar.component';
+import { InscriptionFormComponent } from './components/inscription/inscription.component';
+import { ConnexionComponent } from './components/connexion/connexion.component';
+import { AppUsersComponent } from './components/appusers/appusers.component';
+import { SuggestionsComponent } from './components/suggestions/suggestions.component';
+import { UserFeedComponent } from './components/userfeed/userfeed.component';
+import { ProfilComponent } from './components/profil/profil.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AccueilComponent,
+    NavbarComponent,
+    InscriptionFormComponent,
+    ConnexionComponent,
+    AppUsersComponent,
+    SuggestionsComponent,
+    UserFeedComponent ,
+    ProfilComponent
   ],
   imports: [
     BrowserModule,
