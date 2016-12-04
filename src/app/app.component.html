@@ -32,15 +32,20 @@
       </div>
 
       <div class=" col-md-6">
-        <div class="row">
-          <div class="span4 well" style="padding-bottom:0">
-            <form accept-charset="UTF-8" [formGroup]="userform" (submit)="postAtweet()">
-              <textarea class="span4" formControlName="text" name="new_message" placeholder="Type in your message" rows="5"></textarea>
-              <button class="btn btn-info" type="submit" [disabled]="!userform.valid">Post New Tweet</button>
-            </form>
-          </div>
-          <app-userfeed></app-userfeed>
+        <div class=" panel-body span4 well" style="padding-bottom:0">
+          <form accept-charset="UTF-8" [formGroup]="userform" (submit)="postAtweet()">
+            <div class="input-group" style="padding-bottom:0">
+              <div class="input-group">
+                <input style="padding-bottom:100" size="100" maxlength="255" class="form-control" placeholder="Quoi de neuf?" formControlName="text" type="text">
+              </div>
+              <div class="btn-u pull-right" style="padding-top:100">
+                <button class="btn btn-info " type="submit" [disabled]="!userform.valid">Post New Tweet</button>
+              </div>
+            </div>
+          </form>
         </div>
+        <br/>
+        <app-userfeed></app-userfeed>
       </div>
 
       <div class=" col-md-3" *ngIf="app_auth.getSuggestionsLength() > 0 ">
