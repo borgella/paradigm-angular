@@ -19,12 +19,12 @@ export class ProfilComponent {
     }
 
     public unSubscribeToUser(abonne) {
-        console.log(this.auth_profil.user._id, abonne._id);
         this._httpservice.deleteAbonnement(this.auth_profil.user._id, abonne._id)
             .subscribe((data) => {
-                this._httpservice.getAbonnements(this.auth_profil.getUserId())
+                this._httpservice.getAbonnements(this.auth_profil.user._id)
                     .subscribe((datas) => {
                         this.auth_profil.user.subscribers = datas.body;
+                        console.log(this.auth_profil.user.subscribers);
                     }, (error) => console.log('we will take care of delete get abonnements error'));
 
                 this._httpservice.getSuggestions(this.auth_profil.user._id).subscribe((resp) => {
