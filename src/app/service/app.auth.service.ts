@@ -28,6 +28,14 @@ export class AppProfileService {
         this.click_profile = value;
     }
 
+    public getUserId() {
+        return this.user._id;
+    }
+
+    public getUserSubscribers() {
+        return this.user.subscribers;
+    }
+
     public getSuggestionsLength() {
         return this.user.suggestions.length;
     }

@@ -51,6 +51,13 @@ export class HttpService {
             .map(res => res.json() || {});
 
     }
+    public deleteAbonnement(idUser, idfollewer) {
+        let _headers = new Headers( {'Content-Type': 'application/json'} );
+        let options = new RequestOptions( {headers: _headers});
+        return this._http.delete('https://paradigmeinternetnode.herokuapp.com/utilisateurs/abonnements/'+ idUser +'/'+idfollewer, options)
+            .map( res => res.json() || {} );
+
+    }
 
     public getFil(idUser) {
         return this._http.get('https://paradigmeinternetnode.herokuapp.com/utilisateurs/fil/' + idUser)
