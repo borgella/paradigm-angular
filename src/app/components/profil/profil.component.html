@@ -35,7 +35,7 @@
                         <div class='input-group input-group-md'>
                             <input type='text' class='form-control' placeholder="{{tweet.tweet}}">
                             <span class='input-group-btn'>
-                                <button  class ='btn-supprimer btn btn-info'  (click)= "deleteTweet(tweet)" >Supprimer</button>
+                                <button  class ='btn btn-info'  (click)= "deleteTweet(tweet)" >Supprimer</button>
                              </span>
                         </div>
                     </div>
@@ -44,7 +44,7 @@
 
         </div>
 
-        <div class=" col-md-3" *ngIf="auth_profil.getSuggestionsLength() > 0 ">
+        <div class=" col-md-3" *ngIf="auth_profil.user.subscribers > 0 ">
             <div id="suggestion" class="panel panel-default">
                 <div class="panel-heading">Abonnements</div>
                 <div *ngIf="expression"></div>
