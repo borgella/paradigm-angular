@@ -1,11 +1,11 @@
 <div id="suggestion" class="panel panel-default">
     <div class="panel-heading">Suggestions</div>
-    <div *ngFor="let suggestion of auth.user.suggestions">
+    <div *ngFor="let user of auth.user.suggestions">
         <div class="panel-body">
             <div id="subscribe" class='input-group input-group-md'>
-                <input type='text' id='tweet' class='form-control' placeholder="{{suggestion.first_name}}">
+                <input type='text' id='tweet' class='form-control' placeholder="{{user.first_name}}">
                 <span class='input-group-btn'>
-              <button  class ='btn btn-default' (click)= "subscribeToUser(suggestion)">Subscribe</button>
+              <button  class ='btn btn-default' (click)= "subscribeToUser(user)">Subscribe</button>
         </span>
             </div>
         </div>
