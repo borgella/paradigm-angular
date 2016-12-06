@@ -1,5 +1,7 @@
 <app-navbar></app-navbar>
-<router-outlet></router-outlet>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
 <div class="container">
   <app-accueil></app-accueil>
   <div *ngIf="app_auth.authenticated() && app_auth.click_profile">
@@ -36,7 +38,8 @@
           <form accept-charset="UTF-8" [formGroup]="userform" (submit)="postAtweet()">
             <div class="input-group" style="padding-bottom:0">
               <div class="input-group">
-                <input style="padding-bottom:100" size="100" maxlength="255" class="form-control" placeholder="Quoi de neuf?" formControlName="text" type="text">
+                <input style="padding-bottom:100" size="100" maxlength="255" class="form-control" placeholder="Quoi de neuf?" formControlName="text"
+                  type="text">
               </div>
               <div class="btn-u pull-right" style="padding-top:100">
                 <button class="btn btn-info " type="submit" [disabled]="!userform.valid">Post New Tweet</button>
