@@ -14,12 +14,11 @@
             <ul class="nav navbar-nav">
                 <li><a routerLink="/accueil" *ngIf="app_auth.authenticated()">Accueil</a></li>
                 <li><a routerLink="/profile" *ngIf="app_auth.authenticated()">Profile</a></li>
-                <li><a routerLink="/connexion" *ngIf="!app_auth.authenticated()">Login</a></li>
-                <li><a href="#" (click)="app_auth.logout()" *ngIf="app_auth.authenticated()">Logout</a></li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
-                
+                <li><a routerLink="/connexion" *ngIf="!app_auth.authenticated()">Login</a></li>
+                <li><a href="#" (click)="app_auth.logout()" *ngIf="app_auth.authenticated()">Logout</a></li>
             </ul>
         </div>
     </div>
