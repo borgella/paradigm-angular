@@ -24,7 +24,6 @@ export class ProfilComponent {
                 this._httpservice.getAbonnements(this.auth_profil.user._id)
                     .subscribe((datas) => {
                         this.auth_profil.user.subscribers = datas.body;
-                        console.log(this.auth_profil.user.subscribers);
                     }, (error) => console.log('we will take care of delete get abonnements error'));
 
                 this._httpservice.getSuggestions(this.auth_profil.user._id).subscribe((resp) => {
