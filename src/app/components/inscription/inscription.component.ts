@@ -14,6 +14,7 @@ import { User } from '../../user';
 export class InscriptionFormComponent implements OnInit {
   userform: FormGroup;
   user: User;
+  error: Object;
   constructor(private _formbuilder: FormBuilder, private _httpservice: HttpService, private auth_profil: AppProfileService,
     private auth0: Auth0HttpService) { }
 
@@ -34,7 +35,7 @@ export class InscriptionFormComponent implements OnInit {
           .subscribe((res) => {
             this.user.setSuggestion(res.body);
             this.auth_profil.setUser(this.user);
-          }, (error) => console.log('take care of the inscription error later ' + error));
+          }, (error) => { this.error = new Object(error._body); } );
 
       });
 
