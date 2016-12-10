@@ -54,7 +54,8 @@ export class HttpService {
     public deleteAbonnement(idUser, idfollewer) {
         let _headers = new Headers( {'Content-Type': 'application/json'} );
         let options = new RequestOptions( {headers: _headers});
-        return this._http.delete('https://paradigmeinternetnode.herokuapp.com/utilisateurs/abonnements/'+ idUser +'/'+idfollewer, options)
+        // tslint:disable-next-line:max-line-length
+        return this._http.delete('https://paradigmeinternetnode.herokuapp.com/utilisateurs/abonnements/' + idUser + '/' + idfollewer, options)
             .map( res => res.json() || {} );
 
     }
