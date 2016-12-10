@@ -35,9 +35,9 @@ export class InscriptionFormComponent implements OnInit {
           .subscribe((res) => {
             this.user.setSuggestion(res.body);
             this.auth_profil.setUser(this.user);
-          }, (error) => { this.error = new Object(error._body); } );
+          }, (error) => { this.error = JSON.parse((error._body)); } );
 
-      });
+      }, (error) => { this.error = JSON.parse((error._body)); });
 
     this.resetTheForm();
   }
