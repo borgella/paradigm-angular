@@ -19,6 +19,8 @@ import { SuggestionsComponent } from './components/suggestions/suggestions.compo
 import { UserFeedComponent } from './components/userfeed/userfeed.component';
 import { ProfilComponent } from './components/profil/profil.component';
 
+import { AppDirective } from './app.directive';
+
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { ProfilComponent } from './components/profil/profil.component';
     AppUsersComponent,
     SuggestionsComponent,
     UserFeedComponent ,
-    ProfilComponent
+    ProfilComponent,
+    AppDirective
   ],
   imports: [
     BrowserModule,
