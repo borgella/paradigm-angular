@@ -1,8 +1,6 @@
 <app-navbar></app-navbar>
 <div class="container">
   <router-outlet></router-outlet>
-</div>
-<div class="container">
   <app-accueil></app-accueil>
   <div *ngIf="app_auth.authenticated() && app_auth.click_profile">
     <div class="row">
