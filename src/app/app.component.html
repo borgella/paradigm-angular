@@ -4,7 +4,7 @@
   <div *ngIf="app_auth.authenticated() && app_auth.click_profile">
     <div class="row">
 
-      <div class="col-md-3 ">
+      <div class="col-md-3 col-sm-12 col-xs-12" >
         <div class="tw-div">
           <a class="tw-bg tw-block"></a>
           <div class="tw-photo">
@@ -44,14 +44,14 @@
         </div>
       </div>
 
-      <div class=" col-md-6">
+      <div class=" col-md-6 col-sm-12 col-xs-12">
         <div class="place-description">
-          <div id="photoinput" class="col-md-2">
+          <div id="photoinput" class="col-md-2 col-sm-2 col-xs-2">
             <div class="photo-thumbnail">
-              <img src="http://zupimages.net/up/16/49/0xdx.png" alt="Jean Mary Borgella">
+              <img class="img-responsive" src="http://zupimages.net/up/16/49/0xdx.png" alt="Jean Mary Borgella">
             </div>
           </div>
-          <div id="inputid" class="col-md-10">
+          <div id="inputid" class="col-md-10 col-sm-10 col-xs-10">
             <form accept-charset="UTF-8" [formGroup]="userform" (submit)="postAtweet()">
               <div class="description">
                 <input class="form-control" placeholder="Quoi de neuf?" formControlName="text" type="text">
@@ -66,7 +66,7 @@
         <app-userfeed></app-userfeed>
       </div>
 
-      <div class=" col-md-3" *ngIf="app_auth.getSuggestionsLength() > 0 ">
+      <div class="col-md-3 col-sm-12 col-xs-12" *ngIf="app_auth.getSuggestionsLength() > 0 ">
         <app-suggestions> </app-suggestions>
       </div>
 

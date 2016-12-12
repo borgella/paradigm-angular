@@ -111,8 +111,8 @@ input {
 
 }
 .photo-thumbnail img{
-  height: 52px;
-  width: 52px;
+  height: 62px;
+  width: 62px;
   border-radius: 6px;
 }
 .description{
