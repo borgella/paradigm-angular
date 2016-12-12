@@ -46,21 +46,21 @@
 
       <div class=" col-md-6">
         <div class="place-description">
-          <div id="photoinput" class="col-md-3">
+          <div id="photoinput" class="col-md-2">
             <div class="photo-thumbnail">
               <img src="http://zupimages.net/up/16/49/0xdx.png" alt="Jean Mary Borgella">
             </div>
           </div>
-          <form accept-charset="UTF-8" [formGroup]="userform" (submit)="postAtweet()">
-            <div id="inputid" class="col-md-9">
+          <div id="inputid" class="col-md-10">
+            <form accept-charset="UTF-8" [formGroup]="userform" (submit)="postAtweet()">
               <div class="description">
                 <input class="form-control" placeholder="Quoi de neuf?" formControlName="text" type="text">
               </div>
               <div class="button-place">
                 <button class="btn btn-info " type="submit" [disabled]="!userform.valid">Post Tweet</button>
               </div>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
         <br/>
         <app-userfeed></app-userfeed>
@@ -72,5 +72,5 @@
 
     </div>
   </div>
-    <router-outlet></router-outlet>
+  <router-outlet></router-outlet>
 </div>
