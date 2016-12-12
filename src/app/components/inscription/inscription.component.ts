@@ -14,7 +14,7 @@ import { User } from '../../user';
 export class InscriptionFormComponent implements OnInit {
   userform: FormGroup;
   user: User;
-  error: Object;
+  error: any;
   constructor(private _formbuilder: FormBuilder, private _httpservice: HttpService, private auth_profil: AppProfileService,
     private auth0: Auth0HttpService) { }
 
@@ -35,9 +35,12 @@ export class InscriptionFormComponent implements OnInit {
           .subscribe((res) => {
             this.user.setSuggestion(res.body);
             this.auth_profil.setUser(this.user);
-          }, (error) => { this.error = JSON.parse((error._body)); } );
+          }, (error) => { this.error = JSON.parse((error._body)); });
 
-      }, (error) => { this.error = JSON.parse((error._body)); });
+      }, (error) => { this.error = JSON.parse((error._body));
+        if (this.error.body !== 'This address email is already taking.') {
+              this.error.body = 'Your email adress should respect the format : example@example.com.'; }
+      });
 
     this.resetTheForm();
   }
