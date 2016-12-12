@@ -9,33 +9,33 @@
         <div class="tw-div">
           <a class="tw-bg tw-block"></a>
           <div class="tw-photo">
-            <a href=""><img src="http://zupimages.net/up/16/49/0xdx.png" alt="Jean Mary Borgella"></a>
+            <a routerLink="/profile"><img src="http://zupimages.net/up/16/49/0xdx.png" alt="Jean Mary Borgella"></a>
           </div>
           <div class="tw-divUser">
             <div class="tw-divName">
-              <a href="">{{app_auth.user.first_name}} {{app_auth.user.last_name}}</a>
+              <a routerLink="/profile">{{app_auth.user.first_name}} {{app_auth.user.last_name}}</a>
             </div>
             <span>
-  				<a href="">@<span>{{app_auth.user.last_name}}</span></a>
+  				<a routerLink="/profile">@<span>{{app_auth.user.last_name}}</span></a>
             </span>
           </div>
 
           <div class="tw-divStats">
             <ul class="tw-Arrange">
               <li class="tw-ArrangeSizeFit">
-                <a href="" title="Tweet">
+                <a routerLink="/profile" title="Tweet">
                   <span class="tw-StatLabel tw-block">Tweets</span>
                   <span class="tw-StatValue">{{app_auth.user.tweets.length}}</span>
                 </a>
               </li>
               <li class="tw-ArrangeSizeFit">
-                <a href="" title="Abonnements">
+                <a routerLink="/profile" title="Abonnements">
                   <span class="tw-StatLabel tw-block">Abonnements</span>
                   <span class="tw-StatValue">{{app_auth.user.subscribers.length}}</span>
                 </a>
               </li>
               <li class="tw-ArrangeSizeFit">
-                <a href="" title="Abonnés">
+                <a routerLink="/profile" title="Abonnés">
                   <span class="tw-StatLabel tw-block">Abonnés</span>
                   <span class="tw-StatValue">{{app_auth.user.followers.length}}</span>
                 </a>

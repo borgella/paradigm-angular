@@ -5,33 +5,33 @@
                 <div class="tw-div">
                     <a class="tw-bg tw-block"></a>
                     <div class="tw-photo">
-                        <a href=""><img src="http://zupimages.net/up/16/49/0xdx.png" alt="Jean Mary Borgella"></a>
+                        <a routerLink="/profile"><img src="http://zupimages.net/up/16/49/0xdx.png" alt="Jean Mary Borgella"></a>
                     </div>
                     <div class="tw-divUser">
                         <div class="tw-divName">
-                            <a href="">{{auth_profil.user.first_name}} {{auth_profil.user.last_name}}</a>
+                            <a routerLink="/profile">{{auth_profil.user.first_name}} {{auth_profil.user.last_name}}</a>
                         </div>
                         <span>
-  				<a href="">@<span>{{auth_profil.user.last_name}}</span></a>
+  				            <a routerLink="/profile">@<span>{{auth_profil.user.last_name}}</span></a>
                         </span>
                     </div>
 
                     <div class="tw-divStats">
                         <ul class="tw-Arrange">
                             <li class="tw-ArrangeSizeFit">
-                                <a href="" title="Tweet">
+                                <a routerLink="/profile" title="Tweet">
                                     <span class="tw-StatLabel tw-block">Tweets</span>
                                     <span class="tw-StatValue">{{auth_profil.user.tweets.length}}</span>
                                 </a>
                             </li>
                             <li class="tw-ArrangeSizeFit">
-                                <a href="" title="Abonnements">
+                                <a routerLink="/profile" title="Abonnements">
                                     <span class="tw-StatLabel tw-block">Abonnements</span>
                                     <span class="tw-StatValue">{{auth_profil.user.subscribers.length}}</span>
                                 </a>
                             </li>
                             <li class="tw-ArrangeSizeFit">
-                                <a href="" title="Abonnés">
+                                <a routerLink="/profile" title="Abonnés">
                                     <span class="tw-StatLabel tw-block">Abonnés</span>
                                     <span class="tw-StatValue">{{auth_profil.user.followers.length}}</span>
                                 </a>
@@ -42,40 +42,29 @@
             </div>
 
             <div class=" col-md-6">
-
-                <div id="suggestion" class="panel panel-default">
-                    <div *ngFor="let tweet of auth_profil.user.tweets">
-                        <div class="panel-body">
-                            <div class='input-group input-group-md'>
-                                <input type='text' class='form-control' placeholder="{{tweet.tweet}}">
-                                <span class='input-group-btn'>
-                                <button  class ='btn btn-info'  (click)= "deleteTweet(tweet)" >Supprimer</button>
-                             </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+                <app-userfeed></app-userfeed>
             </div>
 
             <div class=" col-md-3">
-                <div id="suggestion" class="panel panel-default">
-                    <div class="panel-heading">Abonnements</div>
-                    <div *ngIf="expression"></div>
-                    <div *ngFor="let abonne of auth_profil.user.subscribers">
-                        <div class="panel-body">
-                            <div id="subscribe" class='input-group input-group-md'>
-                                <input type='text' id='tweet' class='form-control' placeholder="{{abonne.first_name}}">
-                                <span class='input-group-btn'>
-                                <button  class ='btn btn-info' (click)= "unSubscribeToUser(abonne)">Unsubscribe</button>
-                            </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <app-suggestions> </app-suggestions>
             </div>
-
         </div>
     </div>
 
 </div>
+
+<!--div id="suggestion" class="panel panel-default">
+    <div class="panel-heading">Abonnements</div>
+    <div *ngIf="expression"></div>
+    <div *ngFor="let abonne of auth_profil.user.subscribers">
+        <div class="panel-body">
+            <div id="subscribe" class='input-group input-group-md'>
+                <input type='text' id='tweet' class='form-control' placeholder="{{abonne.first_name}}">
+                <span class='input-group-btn'>
+                                <button  class ='btn btn-info' (click)= "unSubscribeToUser(abonne)">Unsubscribe</button>
+                            </span>
+            </div>
+        </div>
+    </div>
+</div>
+</div-->
