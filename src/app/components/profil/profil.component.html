@@ -1,57 +1,57 @@
-<div class="container">
-    <div *ngIf="!auth_profil.click_profile">
-        <div class="row">
-            <div class="col-md-3 ">
-                <div class="tw-div">
-                    <a class="tw-bg tw-block"></a>
-                    <div class="tw-photo">
-                        <a routerLink="/profile"><img src="http://zupimages.net/up/16/49/0xdx.png" alt="Jean Mary Borgella"></a>
+<div *ngIf="!auth_profil.click_profile">
+    <div class="row">
+        
+        <div class="col-md-3 ">
+            <div class="tw-div">
+                <a class="tw-bg tw-block"></a>
+                <div class="tw-photo">
+                    <a routerLink="/profile"><img src="http://zupimages.net/up/16/49/0xdx.png" alt="Jean Mary Borgella"></a>
+                </div>
+                <div class="tw-divUser">
+                    <div class="tw-divName">
+                        <a routerLink="/profile">{{auth_profil.user.first_name}} {{auth_profil.user.last_name}}</a>
                     </div>
-                    <div class="tw-divUser">
-                        <div class="tw-divName">
-                            <a routerLink="/profile">{{auth_profil.user.first_name}} {{auth_profil.user.last_name}}</a>
-                        </div>
-                        <span>
+                    <span>
   				            <a routerLink="/profile">@<span>{{auth_profil.user.last_name}}</span></a>
-                        </span>
-                    </div>
+                    </span>
+                </div>
 
-                    <div class="tw-divStats">
-                        <ul class="tw-Arrange">
-                            <li class="tw-ArrangeSizeFit">
-                                <a routerLink="/profile" title="Tweet">
-                                    <span class="tw-StatLabel tw-block">Tweets</span>
-                                    <span class="tw-StatValue">{{auth_profil.user.tweets.length}}</span>
-                                </a>
-                            </li>
-                            <li class="tw-ArrangeSizeFit">
-                                <a routerLink="/profile" title="Abonnements">
-                                    <span class="tw-StatLabel tw-block">Abonnements</span>
-                                    <span class="tw-StatValue">{{auth_profil.user.subscribers.length}}</span>
-                                </a>
-                            </li>
-                            <li class="tw-ArrangeSizeFit">
-                                <a routerLink="/profile" title="Abonnés">
-                                    <span class="tw-StatLabel tw-block">Abonnés</span>
-                                    <span class="tw-StatValue">{{auth_profil.user.followers.length}}</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+                <div class="tw-divStats">
+                    <ul class="tw-Arrange">
+                        <li class="tw-ArrangeSizeFit">
+                            <a routerLink="/profile" title="Tweet">
+                                <span class="tw-StatLabel tw-block">Tweets</span>
+                                <span class="tw-StatValue">{{auth_profil.user.tweets.length}}</span>
+                            </a>
+                        </li>
+                        <li class="tw-ArrangeSizeFit">
+                            <a routerLink="/profile" title="Abonnements">
+                                <span class="tw-StatLabel tw-block">Abonnements</span>
+                                <span class="tw-StatValue">{{auth_profil.user.subscribers.length}}</span>
+                            </a>
+                        </li>
+                        <li class="tw-ArrangeSizeFit">
+                            <a routerLink="/profile" title="Abonnés">
+                                <span class="tw-StatLabel tw-block">Abonnés</span>
+                                <span class="tw-StatValue">{{auth_profil.user.followers.length}}</span>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
+        </div>
 
-            <div class=" col-md-6">
-                <app-userfeed></app-userfeed>
-            </div>
+        <div class=" col-md-6">
+            <app-userfeed></app-userfeed>
+        </div>
 
-            <div class=" col-md-3">
-                <app-suggestions> </app-suggestions>
-            </div>
+        <div class=" col-md-3">
+            <app-suggestions> </app-suggestions>
         </div>
     </div>
-
 </div>
+
+
 
 <!--div id="suggestion" class="panel panel-default">
     <div class="panel-heading">Abonnements</div>
