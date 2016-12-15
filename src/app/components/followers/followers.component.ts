@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AppProfileService } from '../../service/app.auth.service';
 import { HttpService } from '../../service/app.http.service';
 import { Auth0HttpService } from '../../service/app.authHttp.service';
@@ -8,9 +8,17 @@ import { Auth0HttpService } from '../../service/app.authHttp.service';
     templateUrl: './followers.component.html',
     styleUrls: ['./followers.component.css']
 })
-export class FollowersComponent {
+export class FollowersComponent implements OnInit {
 
     public constructor(private _httpservice: HttpService, private auth: AppProfileService,  protected _auth0: Auth0HttpService) {}
+
+
+    public ngOnInit() {
+        this._httpservice.getFollowers(this.auth.user._id)
+            .subscribe((res) => {
+                this.auth.user.followers = res.body;
+            });
+    }
 
     public unSubscribeToUser(abonne) {
         this._httpservice.deleteAbonnement(this.auth.user._id, abonne._id)

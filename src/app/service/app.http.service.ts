@@ -44,6 +44,14 @@ export class HttpService {
             .map(res => res.json() || {});
     }
 
+    public getFollowers(idUser) {
+        let _headers = new Headers({'Content-Type': 'application/json'});
+        let options = new RequestOptions({headers: _headers});
+        return this._http.get('https://paradigmeinternetnode.herokuapp.com/utilisateurs/followers/' + idUser, options)
+            .map( res => res.json() || {});
+
+    }
+
     public putAbonnement(idUser, idfollower) {
         let _headers = new Headers({ 'Content-Type': 'application/json' });
         let options = new RequestOptions({ headers: _headers });

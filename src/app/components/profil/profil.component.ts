@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AppProfileService } from '../../service/app.auth.service';
 import { Auth0HttpService } from '../../service/app.authHttp.service';
 import { HttpService } from '../../service/app.http.service';
@@ -8,16 +8,19 @@ import { HttpService } from '../../service/app.http.service';
     templateUrl: './profil.component.html',
     styleUrls: ['./profil.component.css']
 })
-export class ProfilComponent {
+export class ProfilComponent implements OnInit {
 
     private value: string;
 
     public constructor(private auth_profil: AppProfileService, private _auth0: Auth0HttpService, private _httpservice: HttpService) {
         this.auth_profil.setProfile(false);
-        this._httpservice.getAbonnements(this.auth_profil.user._id)
-            .subscribe((data) => {
-                this.auth_profil.user.setSubscribers(data.body);
-            }, (error) => console.log('we will take care of the get abonnements error'));
+    }
+
+    public ngOnInit() {
+         this._httpservice.getAbonnements(this.auth_profil.user._id)
+                .subscribe((data) => {
+                    this.auth_profil.user.setSubscribers(data.body);
+                }, (error) => console.log('we will take care of the get abonnements error'));
     }
 
     public unSubscribeToUser(abonne) {
