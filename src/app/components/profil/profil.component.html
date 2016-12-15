@@ -1,6 +1,6 @@
 <div *ngIf="!auth_profil.click_profile">
     <div class="row">
-        
+
         <div class="col-md-3 ">
             <div class="tw-div">
                 <a class="tw-bg tw-block"></a>
@@ -39,32 +39,15 @@
                     </ul>
                 </div>
             </div>
+            <br>
+            <div class="suggestion">
+                <app-suggestions> </app-suggestions>
+            </div>
         </div>
 
-        <div class=" col-md-6">
+        <div class=" col-md-9">
             <app-userfeed></app-userfeed>
         </div>
 
-        <div class=" col-md-3">
-            <app-suggestions> </app-suggestions>
-        </div>
     </div>
 </div>
-
-
-
-<!--div id="suggestion" class="panel panel-default">
-    <div class="panel-heading">Abonnements</div>
-    <div *ngIf="expression"></div>
-    <div *ngFor="let abonne of auth_profil.user.subscribers">
-        <div class="panel-body">
-            <div id="subscribe" class='input-group input-group-md'>
-                <input type='text' id='tweet' class='form-control' placeholder="{{abonne.first_name}}">
-                <span class='input-group-btn'>
-                                <button  class ='btn btn-info' (click)= "unSubscribeToUser(abonne)">Unsubscribe</button>
-                            </span>
-            </div>
-        </div>
-    </div>
-</div>
-</div-->
