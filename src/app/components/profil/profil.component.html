@@ -19,19 +19,19 @@
                 <div class="tw-divStats">
                     <ul class="tw-Arrange">
                         <li class="tw-ArrangeSizeFit">
-                            <a (click)="setValue('tweet')" title="Tweet">
+                            <a routerLink="/profile" (click)="setValue('tweet')" title="Tweet">
                                 <span class="tw-StatLabel tw-block">Tweets</span>
                                 <span class="tw-StatValue">{{auth_profil.user.tweets.length}}</span>
                             </a>
                         </li>
                         <li class="tw-ArrangeSizeFit">
-                            <a (click)="setValue('abonnements')" title="Abonnements">
+                            <a routerLink="/profile" (click)="setValue('abonnements')" title="Abonnements">
                                 <span class="tw-StatLabel tw-block">Abonnements</span>
                                 <span class="tw-StatValue">{{auth_profil.user.subscribers.length}}</span>
                             </a>
                         </li>
                         <li class="tw-ArrangeSizeFit">
-                            <a (click)="setValue('abonnes')"  title="Abonnés">
+                            <a routerLink="/profile" (click)="setValue('abonnes')" title="Abonnés">
                                 <span class="tw-StatLabel tw-block">Abonnés</span>
                                 <span class="tw-StatValue">{{auth_profil.user.followers.length}}</span>
                             </a>
@@ -40,15 +40,29 @@
                 </div>
             </div>
             <br>
-            <div class="suggestion">
+            <div *ngIf="switchvalue != 'tweet'" class="suggestion">
                 <app-suggestions> </app-suggestions>
             </div>
         </div>
 
         <div class=" col-md-9">
-            <div>
-                <div> <app-userfeed></app-userfeed></div>
-                <div> <app-followers></app-followers></div>
+            <div [ngSwitch]="switchvalue">
+                <div *ngSwitchCase="'tweet'">
+                    <div class="col-md-8">
+                        <app-userfeed></app-userfeed>
+                    </div>
+                    <div class="col-md-4">
+                        <app-suggestions> </app-suggestions>
+                    </div>
+                </div>
+
+                <div *ngSwitchCase="'abonnes'">
+                    <app-followers></app-followers>
+                </div>
+
+                <div *ngSwitchDefault>
+                    <app-userfeed></app-userfeed>
+                </div>
             </div>
         </div>
 
