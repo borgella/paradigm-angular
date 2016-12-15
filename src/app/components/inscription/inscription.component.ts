@@ -12,9 +12,11 @@ import { User } from '../../user';
   styleUrls: ['./inscription.component.css']
 })
 export class InscriptionFormComponent implements OnInit {
+
   userform: FormGroup;
   user: User;
   error: any;
+
   constructor(private _formbuilder: FormBuilder, private _httpservice: HttpService, private auth_profil: AppProfileService,
     private auth0: Auth0HttpService) { }
 
@@ -26,6 +28,8 @@ export class InscriptionFormComponent implements OnInit {
       password: ['', Validators.required]
     });
   }
+
+
   saveUser() {
     this._httpservice.signup(this.userform.value)
       .subscribe((response) => {
@@ -39,11 +43,13 @@ export class InscriptionFormComponent implements OnInit {
 
       }, (error) => { this.error = JSON.parse((error._body));
         if (this.error.body !== 'This address email is already taking.') {
-              this.error.body = 'Your email adress should respect the format : example@example.com.'; }
+                this.error.body = 'Your email adress should respect the format : example@example.com.';
+            }
       });
 
     this.resetTheForm();
   }
+
 
   resetTheForm() {
     this.userform.reset();

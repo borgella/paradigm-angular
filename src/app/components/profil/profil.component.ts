@@ -10,6 +10,8 @@ import { HttpService } from '../../service/app.http.service';
 })
 export class ProfilComponent {
 
+    private value: string;
+
     public constructor(private auth_profil: AppProfileService, private _auth0: Auth0HttpService, private _httpservice: HttpService) {
         this.auth_profil.setProfile(false);
         this._httpservice.getAbonnements(this.auth_profil.user._id)
@@ -31,5 +33,10 @@ export class ProfilComponent {
                 });
 
             }, (error) => console.log('we will take care of delete abonnements error'));
+    }
+
+    public setValue(value: string){
+        this.value = value;
+        console.log(this.value);
     }
 }

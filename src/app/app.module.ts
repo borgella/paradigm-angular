@@ -18,6 +18,7 @@ import { AppUsersComponent } from './components/appusers/appusers.component';
 import { SuggestionsComponent } from './components/suggestions/suggestions.component';
 import { UserFeedComponent } from './components/userfeed/userfeed.component';
 import { ProfilComponent } from './components/profil/profil.component';
+import { FollowersComponent } from './components/followers/followers.component';
 
 import { AppDirective } from './app.directive';
 
@@ -33,6 +34,7 @@ import { AppDirective } from './app.directive';
     SuggestionsComponent,
     UserFeedComponent ,
     ProfilComponent,
+    FollowersComponent,
     AppDirective
   ],
   imports: [

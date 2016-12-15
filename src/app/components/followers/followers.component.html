@@ -1,6 +1,6 @@
 <div id="suggestion" class="panel panel-default">
     <div class="panel-heading">Abonnements</div>
-    <div *ngFor="let abonne of auth_profil.user.subscribers">
+    <div *ngFor="let abonne of auth.user.subscribers">
         <div class="panel-body">
             <div id="subscribe" class='input-group input-group-md'>
                 <input type='text' id='tweet' class='form-control' placeholder="{{abonne.first_name}}">
@@ -10,5 +10,4 @@
             </div>
         </div>
     </div>
-</div>
 </div>

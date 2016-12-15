@@ -19,19 +19,19 @@
                 <div class="tw-divStats">
                     <ul class="tw-Arrange">
                         <li class="tw-ArrangeSizeFit">
-                            <a routerLink="/profile" title="Tweet">
+                            <a (click)="setValue('tweet')" title="Tweet">
                                 <span class="tw-StatLabel tw-block">Tweets</span>
                                 <span class="tw-StatValue">{{auth_profil.user.tweets.length}}</span>
                             </a>
                         </li>
                         <li class="tw-ArrangeSizeFit">
-                            <a routerLink="/profile" title="Abonnements">
+                            <a (click)="setValue('abonnements')" title="Abonnements">
                                 <span class="tw-StatLabel tw-block">Abonnements</span>
                                 <span class="tw-StatValue">{{auth_profil.user.subscribers.length}}</span>
                             </a>
                         </li>
                         <li class="tw-ArrangeSizeFit">
-                            <a routerLink="/profile" title="Abonnés">
+                            <a (click)="setValue('abonnes')"  title="Abonnés">
                                 <span class="tw-StatLabel tw-block">Abonnés</span>
                                 <span class="tw-StatValue">{{auth_profil.user.followers.length}}</span>
                             </a>
@@ -46,7 +46,10 @@
         </div>
 
         <div class=" col-md-9">
-            <app-userfeed></app-userfeed>
+            <div>
+                <div> <app-userfeed></app-userfeed></div>
+                <div> <app-followers></app-followers></div>
+            </div>
         </div>
 
     </div>

@@ -5,10 +5,10 @@ import { Auth0HttpService } from '../../service/app.authHttp.service';
 
 @Component({
     selector: 'app-followers',
-    templateUrl: './followers.html',
-    styleUrls: ['./followers.css']
+    templateUrl: './followers.component.html',
+    styleUrls: ['./followers.component.css']
 })
-export class AppFollowersComponent {
+export class FollowersComponent {
 
     public constructor(private _httpservice: HttpService, private auth: AppProfileService,  protected _auth0: Auth0HttpService) {}
 
@@ -17,7 +17,12 @@ export class AppFollowersComponent {
             .subscribe((response) => {
                 this._httpservice.getAbonnements(this.auth.user._id)
                     .subscribe((res) => {
-                        this.auth.user.followers = res.body.subscribers.reverse();
+                        this.auth.user.subscribers = res.body;
+                    }, (error) => { console.error(error); });
+
+                this._httpservice.getSuggestions(this.auth.user._id)
+                    .subscribe((rep) => {
+                        this.auth.user.suggestions = rep.body;
                     }, (error) => { console.error(error); });
 
             }, (error) => { console.error(error); } );
