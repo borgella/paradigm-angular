@@ -15,6 +15,8 @@ import { HttpService } from './service/app.http.service';
 export class AppComponent implements OnInit {
 
   userform: FormGroup;
+  private value: string;
+  profilValue: boolean = false;
 
 
   constructor(private _formBuilder: FormBuilder, private app_auth: AppProfileService, 
@@ -37,6 +39,11 @@ export class AppComponent implements OnInit {
           }, (error) => console.log(' error get fil ' + error));
       }, (error) => console.log('error post tweet ' + error));
     this.resetForm();
+  }
+
+  public setValue(value) {
+    console.log(value);
+    this.value = value;
   }
 
   public createTweet(text) {

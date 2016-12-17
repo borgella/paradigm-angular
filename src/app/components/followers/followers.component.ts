@@ -10,7 +10,9 @@ import { Auth0HttpService } from '../../service/app.authHttp.service';
 })
 export class FollowersComponent implements OnInit {
 
-    public constructor(private _httpservice: HttpService, private auth: AppProfileService,  protected _auth0: Auth0HttpService) {}
+    private error: any;
+
+    public constructor(private _httpservice: HttpService, private auth: AppProfileService, protected _auth0: Auth0HttpService) { }
 
 
     public ngOnInit() {
@@ -20,19 +22,18 @@ export class FollowersComponent implements OnInit {
             });
     }
 
-    public unSubscribeToUser(abonne) {
-        this._httpservice.deleteAbonnement(this.auth.user._id, abonne._id)
-            .subscribe((response) => {
-                this._httpservice.getAbonnements(this.auth.user._id)
-                    .subscribe((res) => {
-                        this.auth.user.subscribers = res.body;
-                    }, (error) => { console.error(error); });
+    public subscribeToUser(user) {
+        this._httpservice.putAbonnement(this.auth.user._id, user._id).subscribe((res) => {
 
-                this._httpservice.getSuggestions(this.auth.user._id)
-                    .subscribe((rep) => {
-                        this.auth.user.suggestions = rep.body;
-                    }, (error) => { console.error(error); });
+            this._httpservice.getAbonnements(this.auth.user._id).subscribe((response) => {
+                this.auth.user.subscribers = response.body;
+            }, (error) => console.log('we will take care of get abonnements error later ' + error));
 
-            }, (error) => { console.error(error); } );
+            this._httpservice.getSuggestions(this.auth.user._id).subscribe((resp) => {
+                this.auth.user.suggestions = resp.body;
+            }, (error) => console.log('we will take care of get suggestions error later ' + error));
+
+        }, (error) => { this.error = error; } );
     }
+
 }

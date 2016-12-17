@@ -60,6 +60,10 @@
                     <app-followers></app-followers>
                 </div>
 
+                <div *ngSwitchCase="'abonnements'">
+                    <app-subscribers></app-subscribers>
+                </div>
+
                 <div *ngSwitchDefault>
                     <app-userfeed></app-userfeed>
                 </div>

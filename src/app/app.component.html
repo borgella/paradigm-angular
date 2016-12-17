@@ -13,29 +13,29 @@
             </div>
             <div class="tw-divUser">
               <div class="tw-divName">
-                  <a routerLink="/profile">{{app_auth.user.first_name}} {{app_auth.user.last_name}}</a>
+                <a routerLink="/component">{{app_auth.user.first_name}} {{app_auth.user.last_name}}</a>
               </div>
               <span>
-  				        <a routerLink="/profile">@<span>{{app_auth.user.last_name}}</span></a>
+  				        <a routerLink="/component">@<span>{{app_auth.user.last_name}}</span></a>
               </span>
             </div>
 
             <div class="tw-divStats">
               <ul class="tw-Arrange">
                 <li class="tw-ArrangeSizeFit">
-                  <a routerLink="/profile" title="Tweet">
+                  <a routerLink="/profile" (click)="setValue('tweet')" title="Tweet">
                     <span class="tw-StatLabel tw-block">Tweets</span>
                     <span class="tw-StatValue">{{app_auth.user.tweets.length}}</span>
                   </a>
                 </li>
                 <li class="tw-ArrangeSizeFit">
-                  <a routerLink="/profile" title="Abonnements">
+                  <a routerLink="/profile" (click)="setValue('abonnements')" title="Abonnements">
                     <span class="tw-StatLabel tw-block">Abonnements</span>
                     <span class="tw-StatValue">{{app_auth.user.subscribers.length}}</span>
                   </a>
                 </li>
                 <li class="tw-ArrangeSizeFit">
-                  <a routerLink="/profile" title="Abonnés">
+                  <a routerLink="/profile" (click)="setValue('abonnes')" title="Abonnés">
                     <span class="tw-StatLabel tw-block">Abonnés</span>
                     <span class="tw-StatValue">{{app_auth.user.followers.length}}</span>
                   </a>
