@@ -1,12 +1,20 @@
-<div id="suggestion" class="panel panel-default">
-    <div class="panel-heading">Abonnements</div>
-    <div *ngFor="let abonne of auth.user.followers">
-        <div class="panel-body">
-            <div id="subscribe" class='input-group input-group-md'>
-                <input type='text' id='tweet' class='form-control' placeholder="{{abonne.first_name}}">
-                <span class='input-group-btn'>
-                      <button  class ='btn btn-info' (click)= "unSubscribeToUser(abonne)">Unsubscribe</button>
+<div *ngFor="let abonne of auth.user.followers">
+    <div id="followers" class="col-md-3 col-sm-2 col-xs-12">
+        <div class="tw-div">
+            <a class="tw-bg tw-block"></a>
+            <div class="tw-photo">
+                <a routerLink="/profile"><img src="https://s3.ca-central-1.amazonaws.com/borgellaaws/avatar.jpeg" alt="{{abonne.first_name}}"></a>
+            </div>
+            <div class="tw-divUser">
+                <div class="tw-divName">
+                    <a routerLink="/profile">{{abonne.first_name}} </a>
+                </div>
+                <span>
+  				<a routerLink="/profile">@<span> {{abonne.last_name}} </span></a>
                 </span>
+                <div class="tw-divsub">
+                    <button class='btn btn-primary' (click)="unSubscribeToUser(abonne)">desabonner</button>
+                </div>
             </div>
         </div>
     </div>

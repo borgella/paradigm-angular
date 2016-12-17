@@ -50,6 +50,6 @@ export class User {
             localStorage.setItem('user', JSON.stringify(user));
             localStorage.setItem('id_token', this.id_token);
 
-        } else { console.log('storage already in place'); }
+        } else { return; }
     }
 }
