@@ -12,9 +12,7 @@ export class ProfilComponent implements OnInit {
 
     @Input() switchvalue: string;
 
-    public constructor(private auth_profil: AppProfileService, private _auth0: Auth0HttpService, private _httpservice: HttpService) {
-        //this.auth_profil.setProfile(false);
-    }
+    public constructor(private auth_profil: AppProfileService, private _auth0: Auth0HttpService, private _httpservice: HttpService) { }
 
     public ngOnInit() {
          this._httpservice.getAbonnements(this.auth_profil.user._id)
