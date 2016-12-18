@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AppProfileService } from '../../service/app.auth.service';
 import { Auth0HttpService } from '../../service/app.authHttp.service';
 import { HttpService } from '../../service/app.http.service';
@@ -10,9 +10,11 @@ import { HttpService } from '../../service/app.http.service';
 })
 export class ProfilComponent implements OnInit {
 
-    @Input() switchvalue: string;
+   switchvalue: string;
 
-    public constructor(private auth_profil: AppProfileService, private _auth0: Auth0HttpService, private _httpservice: HttpService) { }
+    public constructor(private auth_profil: AppProfileService, private _auth0: Auth0HttpService, private _httpservice: HttpService) { 
+        this.switchvalue = 'tweet';
+    }
 
     public ngOnInit() {
          this._httpservice.getAbonnements(this.auth_profil.user._id)
@@ -36,8 +38,7 @@ export class ProfilComponent implements OnInit {
             }, (error) => console.log('we will take care of delete abonnements error'));
     }
 
-    public setValue(value: string){
+    public setValue(value: string) {
         this.switchvalue = value;
-        console.log(this.switchvalue);
     }
 }

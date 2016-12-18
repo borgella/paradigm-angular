@@ -12,12 +12,14 @@ import { HttpService } from '../../service/app.http.service';
 })
 export class AccueilComponent implements OnInit {
     userform: FormGroup;
-    private value: string;
+    value: string;
     profilValue: boolean = false;
 
 
     constructor(private _formBuilder: FormBuilder, private app_auth: AppProfileService,
-        private auth0: Auth0HttpService, private _httpservice: HttpService) { }
+        private auth0: Auth0HttpService, private _httpservice: HttpService) { 
+            this.value = null;
+        }
 
     public ngOnInit() {
         this.userform = this._formBuilder.group({
@@ -39,8 +41,8 @@ export class AccueilComponent implements OnInit {
     }
 
     public setValue(value) {
-        console.log(value);
         this.value = value;
+        console.log(this.value);
     }
 
     public createTweet(text) {
