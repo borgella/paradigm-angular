@@ -50,7 +50,7 @@
             <div [ngSwitch]="switchvalue">
                 <div *ngSwitchCase="'tweet'">
                     <div class="col-md-8">
-                        <app-userfeed></app-userfeed>
+                        <app-userfeed [showRetweet] = "false"></app-userfeed>
                     </div>
                     <div class="col-md-4">
                         <app-suggestions> </app-suggestions>

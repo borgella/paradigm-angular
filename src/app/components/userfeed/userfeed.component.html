@@ -14,3 +14,24 @@
         </div>
     </div>
 </div>
+
+<div *ngIf="showRetweet != false">
+    <div *ngFor="let subscriber of auth.user.subscribers; let i = index">
+        <div *ngIf="subscriber.tweets[0]">
+            <div id="tweets" class="panel panel-default">
+                <div class="panel-body">
+                    <div class="photo-thumbnail">
+                        <a href=""><img src="https://s3.ca-central-1.amazonaws.com/borgellaaws/avatar.jpeg" alt="Jean Mary Borgella"></a>
+                    </div>
+                    <div class="tw-tweetUser">
+                        <a routerLink="/profile">{{subscriber.first_name}} {{subscriber.last_name}}</a> <a href="">@<span>{{subscriber.last_name}}</span></a>
+                        <p>{{subscriber.tweets[subscriber.tweets.length-1].tweet}}</p>
+                        <div id="boutontweet">
+                            <button class='btn btn-info' (click)="deleteTweet(tweet)">retweet</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
