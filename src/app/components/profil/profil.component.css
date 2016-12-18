@@ -97,12 +97,7 @@ ul.tw-Arrange {
     max-width: 100%;
     height: 110px;
 }
-.form-control {
-    size: 100px;
-}
-input {
-    size: 1000px;
-}
+
 .photo-thumbnail{
     background-color: #000;
     border-radius: 6px;
@@ -175,4 +170,34 @@ input {
 }
 .close{
   padding-top: 10px;
+}
+
+@media screen and( max-width:732px){
+    .form-control {
+        size: 100px;
+    }
+    #input {
+        size: 1000px;
+    }   
+}
+
+@media screen and (min-width: 733px){
+      .photo{
+        max-width: 100%;
+        height: auto;
+      }
+        .tw-div {
+        margin-bottom: 20px;
+      }
+ }
+
+@media screen and (min-width: 1024px){
+     .photo{
+        max-width: 100%;
+        height: auto;
+     }
+     .photo img{
+         height: auto;
+         width: 100%;
+     }
 }

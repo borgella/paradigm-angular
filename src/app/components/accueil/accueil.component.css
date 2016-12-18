@@ -7,13 +7,8 @@
     height: 200px;
     max-width: 340px;
 }
-@media (min-width: 768px) {
- .tw-div {
-    margin-bottom: 20px;
-  }
-}
 
-.tw-bg {
+.profil-background {
     background-color:#e7e7e7;
     background-position: 0 50%;
     background-size: 100% auto;
@@ -22,12 +17,10 @@
     border-radius: 4px 4px 0 0;
     height: 95px;
     width: 100%;
-}
-.tw-block {
     display: block;
 }
 
-.tw-photo {
+.profile-picture {
     background-color: #000;
     border-radius: 6px;
     display: inline-block !important;
@@ -36,7 +29,7 @@
     padding: 1px;
     vertical-align: bottom;
 }
-.tw-photo img{
+.profile-picture img{
     height: 72px;
     width: 72px;
 }
@@ -52,9 +45,9 @@
     color: inherit !important;
 }
 .tw-divStats {
-     margin: -25px 0 40px 100px;
+    margin: -25px 0 40px 100px;
     margin-left: 11px;
-    padding: 0px 0;
+    padding: 0px;
 }
 .tw-Arrange {
     box-sizing: border-box;
@@ -104,21 +97,6 @@ ul.tw-Arrange {
     height: 110px;
 }
 
-.form-control {
-    size: 100px;
-}
-
-input {
-    size: 1000px;
-}
-
-.photo{
-    background-color: #000;
-    border-radius: 6px;
-    display: inline-block;
-    max-width: 100%;
-
-}
 .description{
     width: 100%;
 
@@ -178,4 +156,46 @@ input {
 }
 .close{
   padding-top: 10px;
+}
+
+.photo {
+    background-color:#000;
+    border-radius: 6px;
+    display: inline-block;
+    max-width: 100%;
+}
+
+.photo img {
+    height: 62px;
+    width: 62px;
+}
+
+@media screen and( max-width:732px){
+    .form-control {
+        size: 100px;
+    }
+    #input {
+        size: 1000px;
+    }   
+}
+
+@media screen and (min-width: 733px){
+      .photo{
+        max-width: 100%;
+        height: auto;
+      }
+        .tw-div {
+        margin-bottom: 20px;
+      }
+ }
+
+@media screen and (min-width: 1024px){
+     .photo{
+        max-width: 100%;
+        height: auto;
+     }
+     .photo img{
+         height: auto;
+         width: 100%;
+     }
 }

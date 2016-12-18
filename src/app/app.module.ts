@@ -33,7 +33,7 @@ import { AppDirective } from './app.directive';
     ConnexionComponent,
     AppUsersComponent,
     SuggestionsComponent,
-    UserFeedComponent ,
+    UserFeedComponent,
     ProfilComponent,
     FollowersComponent,
     SubscribersComponent,
