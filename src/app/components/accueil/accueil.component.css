@@ -166,36 +166,7 @@ ul.tw-Arrange {
 }
 
 .photo img {
-    height: 62px;
-    width: 62px;
+    height: 38px;
+    width: 38px;
 }
 
-@media screen and( max-width:732px){
-    .form-control {
-        size: 100px;
-    }
-    #input {
-        size: 1000px;
-    }   
-}
-
-@media screen and (min-width: 733px){
-      .photo{
-        max-width: 100%;
-        height: auto;
-      }
-        .tw-div {
-        margin-bottom: 20px;
-      }
- }
-
-@media screen and (min-width: 1024px){
-     .photo{
-        max-width: 100%;
-        height: auto;
-     }
-     .photo img{
-         height: auto;
-         width: 100%;
-     }
-}

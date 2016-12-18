@@ -181,26 +181,3 @@ input {
   padding-top: 10px;
 }
 
-@media screen and (max-width: 780px){
-     #suggestion {
-        margin-top: 20px;
-      }
-      .photo{
-      max-width: 100%;
-      height: auto;
-      }
-      .tw-div {
-      margin-bottom: 20px;
-      }
- }
-
-@media screen and (min-width: 1024px){
-     .photo{
-     max-width: 100%;
-     height: auto;
-     }
-     .photo img{
-         height: auto;
-         width: 100%;
-     }
-}
