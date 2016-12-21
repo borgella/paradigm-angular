@@ -10,11 +10,9 @@ import { Auth0HttpService } from '../../service/app.authHttp.service';
 })
 export class UserFeedComponent {
 
-  @Input() showRetweet: boolean;
+  @Input() showRetweet: string;
 
-  constructor(private _httpservice: HttpService, private auth: AppProfileService,  protected _auth0: Auth0HttpService) {
-      this.showRetweet = true;
-   }
+  constructor(private _httpservice: HttpService, private auth: AppProfileService,  protected _auth0: Auth0HttpService) { }
 
   public deleteTweet(tweet) {
     this._httpservice.deleteTweet(this.auth.user._id, tweet._id)

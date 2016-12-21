@@ -15,8 +15,8 @@
     </div>
 </div>
 
-<div *ngIf="showRetweet != false">
-    <div *ngFor="let subscriber of auth.user.subscribers; let i = index">
+<div *ngIf="showRetweet !== 'tweet'">
+    <div *ngFor="let subscriber of auth.user.subscribers; let i = index;">
         <div *ngIf="subscriber.tweets.length > 0 ">
             <div id="tweets" class="panel panel-default">
                 <div class="panel-body">
