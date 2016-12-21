@@ -48,13 +48,13 @@
             <img class="img-responsive" src="https://s3.ca-central-1.amazonaws.com/borgellaaws/avatar.jpeg" alt="Jean Mary Borgella">
           </div>
         </div>
-        <div id="inputid" class="col-md-10 col-sm-9 col-xs-8">
+        <div id="inputid" class="col-md-10 col-sm-9 col-xs-8 cleafix">
           <form accept-charset="UTF-8" [formGroup]="userform" (submit)="postAtweet()">
             <div class="description">
               <input class="form-control" placeholder="Quoi de neuf?" formControlName="text" type="text">
             </div>
             <div class="button-place">
-              <button class="btn btn-info " type="submit" [disabled]="!userform.valid">Post Tweet</button>
+              <button class="btn btn-info pull-right" type="submit" [disabled]="!userform.valid">Post Tweet</button>
             </div>
           </form>
         </div>

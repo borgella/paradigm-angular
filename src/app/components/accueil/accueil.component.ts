@@ -17,7 +17,7 @@ export class AccueilComponent implements OnInit {
 
 
     constructor(private _formBuilder: FormBuilder, private app_auth: AppProfileService,
-        private auth0: Auth0HttpService, private _httpservice: HttpService) { 
+        private auth0: Auth0HttpService, private _httpservice: HttpService) {
             this.value = null;
         }
 

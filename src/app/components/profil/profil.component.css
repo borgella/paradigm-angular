@@ -4,8 +4,9 @@
     background: #fff none repeat scroll 0 0;
     border: 1px solid #e1e8ed;
     border-radius: 6px;
-    height: 200px;
-    max-width: 340px;
+    height: auto;
+    max-width: auto;
+    min-width: 100%;
 }
 .tw-bg {
     background-color:#e7e7e7;
@@ -26,9 +27,9 @@
     border-radius: 6px;
     display: inline-block !important;
     margin: -35px 5px 0 8px;
-    max-width: 100%;
     padding: 1px;
     vertical-align: bottom;
+    max-width: 100%;
 }
 .tw-photo img{
     height: 72px;
@@ -46,7 +47,7 @@
     color: inherit !important;
 }
 .tw-divStats {
-     margin: -25px 0 40px 100px;
+    margin: -25px 0 40px 100px;
     margin-left: 11px;
     padding: 0px 0;
 }
@@ -80,6 +81,7 @@ ul.tw-Arrange {
 }
 .tw-StatLabel {
     color: #8899a6;
+    display: block;
     font-size: 10px;
     letter-spacing: 0.02em;
     overflow: hidden;

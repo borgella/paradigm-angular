@@ -18,11 +18,16 @@
   border-radius: 6px;
 }
 .tw-tweetUser {
-    margin: -35px 0 40px 50px;
+    margin: -35px 5px 45px 50px;
+}
+
+.retweet{
+    margin: -35px 5px 40px 50px;
 }
 
 #boutontweet{
     margin-bottom: 10px;
+    margin-right: 1px;
 }
 
 .panel-body {
@@ -30,7 +35,7 @@
 }
 
 .btn-info{
-        margin-left: 360px;
-        padding: 5px;   
+    margin-left: 360px;
+    padding: 5px;   
 }
 
