@@ -18,7 +18,7 @@ export class InscriptionFormComponent implements OnInit {
   error: any;
 
   constructor(private _formbuilder: FormBuilder, private _httpservice: HttpService, private auth_profil: AppProfileService,
-    private auth0: Auth0HttpService) { }
+    private auth0: Auth0HttpService) { this.error = null; }
 
   ngOnInit() {
     this.userform = this._formbuilder.group({

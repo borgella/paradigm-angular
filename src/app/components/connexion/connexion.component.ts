@@ -15,10 +15,10 @@ export class ConnexionComponent implements OnInit {
   user: User;
   feed: any;
   userform: FormGroup;
-  error: Object;
+  error: any;
 
   public constructor(private _formbuilder: FormBuilder, private _httpservice: HttpService, private auth_profil: AppProfileService,
-    private _auth0: Auth0HttpService) { }
+    private _auth0: Auth0HttpService) { this.error = null; }
 
   public ngOnInit() {
     this.userform = this._formbuilder.group({

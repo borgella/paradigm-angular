@@ -41,7 +41,7 @@
                 </div>
             </div>
             <br>
-            <div *ngIf="switchvalue != 'tweet'" class="suggestion">
+            <div *ngIf="switchvalue != 'tweet' && auth_profil.getSuggestionsLength() > 0" class="suggestion">
                 <app-suggestions> </app-suggestions>
             </div>
         </div>
