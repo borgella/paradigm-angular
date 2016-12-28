@@ -9,6 +9,7 @@ import { Auth0HttpService } from '../../service/app.authHttp.service';
   styleUrls: ['./suggestions.component.css']
 })
 export class SuggestionsComponent {
+
   constructor(private _httpservice: HttpService, private auth: AppProfileService, protected _auth0: Auth0HttpService) { }
 
   public subscribeToUser(user) {

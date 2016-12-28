@@ -11,15 +11,15 @@ import { HttpService } from '../../service/app.http.service';
     styleUrls: ['./accueil.component.css']
 })
 export class AccueilComponent implements OnInit {
-    userform: FormGroup;
-    value: string;
-    profilValue: boolean = false;
+
+    private userform: FormGroup;
+    private value: string;
 
 
     constructor(private _formBuilder: FormBuilder, private app_auth: AppProfileService,
         private auth0: Auth0HttpService, private _httpservice: HttpService) {
             this.value = null;
-        }
+    }
 
     public ngOnInit() {
         this.userform = this._formBuilder.group({

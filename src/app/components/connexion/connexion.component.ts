@@ -12,10 +12,10 @@ import { User } from '../../user';
   styleUrls: ['./connexion.component.css']
 })
 export class ConnexionComponent implements OnInit {
-  user: User;
-  feed: any;
-  userform: FormGroup;
-  error: any;
+
+  private user: User;
+  private userform: FormGroup;
+  private error: any;
 
   public constructor(private _formbuilder: FormBuilder, private _httpservice: HttpService, private auth_profil: AppProfileService,
     private _auth0: Auth0HttpService) { this.error = null; }
@@ -41,7 +41,7 @@ export class ConnexionComponent implements OnInit {
         this.auth_profil.setProfile(true);
       }, (error) => console.log(' new error to take getSuggestions error later'));
 
-    }, (error) => { this.error = JSON.parse(error._body); } );
+    }, (error) => { this.error = JSON.parse(error._body); });
 
     this.resetTheForm();
   }

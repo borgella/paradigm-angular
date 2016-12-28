@@ -13,9 +13,9 @@ import { User } from '../../user';
 })
 export class InscriptionFormComponent implements OnInit {
 
-  userform: FormGroup;
-  user: User;
-  error: any;
+  private userform: FormGroup;
+  private user: User;
+  private error: any;
 
   constructor(private _formbuilder: FormBuilder, private _httpservice: HttpService, private auth_profil: AppProfileService,
     private auth0: Auth0HttpService) { this.error = null; }
