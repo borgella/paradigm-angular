@@ -8,7 +8,7 @@ export class HttpService {
 
     constructor(private _http: Http) { }
 
-    signup(formValue) {
+    signup(formValue: any) {
         let _headers = new Headers({ 'Content-Type': 'application/json' });
         let options = new RequestOptions({ headers: _headers });
         return this._http.post('https://paradigmeinternetnode.herokuapp.com/users/signup', JSON.stringify({
@@ -20,7 +20,7 @@ export class HttpService {
             .map(res => res.json() || {});
     }
 
-    public login(formValue) {
+    public login(formValue: any) {
         let _headers = new Headers({ 'Content-Type': 'application/json' });
         let options = new RequestOptions({ headers: _headers });
         return this._http.post('https://paradigmeinternetnode.herokuapp.com/users/login', JSON.stringify({
@@ -30,21 +30,21 @@ export class HttpService {
             .map(res => res.json() || {});
     }
 
-    public getAbonnements(idUser) {
+    public getAbonnements(idUser: string) {
         let _headers = new Headers({ 'Content-Type': 'application/json' });
         let options = new RequestOptions({ headers: _headers });
         return this._http.get('https://paradigmeinternetnode.herokuapp.com/utilisateurs/abonnements/' + idUser , options)
             .map(res => res.json() || {});
     }
 
-    public getSuggestions(idUser) {
+    public getSuggestions(idUser: string) {
         let _headers = new Headers({ 'Content-Type': 'application/json' });
         let options = new RequestOptions({ headers: _headers });
         return this._http.get('https://paradigmeinternetnode.herokuapp.com/utilisateurs/suggestions/' + idUser, options)
             .map(res => res.json() || {});
     }
 
-    public getFollowers(idUser) {
+    public getFollowers(idUser: string) {
         let _headers = new Headers({'Content-Type': 'application/json'});
         let options = new RequestOptions({headers: _headers});
         return this._http.get('https://paradigmeinternetnode.herokuapp.com/utilisateurs/followers/' + idUser, options)
@@ -52,14 +52,14 @@ export class HttpService {
 
     }
 
-    public putAbonnement(idUser, idfollower) {
+    public putAbonnement(idUser: string, idfollower: string) {
         let _headers = new Headers({ 'Content-Type': 'application/json' });
         let options = new RequestOptions({ headers: _headers });
         return this._http.put('https://paradigmeinternetnode.herokuapp.com/utilisateurs/abonnements/' + idUser + '/' + idfollower, options)
             .map(res => res.json() || {});
 
     }
-    public deleteAbonnement(idUser, idfollewer) {
+    public deleteAbonnement(idUser: string, idfollewer: string) {
         let _headers = new Headers( {'Content-Type': 'application/json'} );
         let options = new RequestOptions( {headers: _headers});
         // tslint:disable-next-line:max-line-length
@@ -68,46 +68,46 @@ export class HttpService {
 
     }
 
-    public getFil(idUser) {
+    public getFil(idUser: string) {
         return this._http.get('https://paradigmeinternetnode.herokuapp.com/utilisateurs/fil/' + idUser)
             .map(res => res.json() || {});
     }
 
-    public postTweet(idUser, tweet) {
+    public postTweet(idUser: string, tweet: any) {
         let _headers = new Headers({ 'Content-Type': 'application/json' });
         let options = new RequestOptions({headers: _headers});
         return this._http.post('https://paradigmeinternetnode.herokuapp.com/utilisateurs/tweet/' + idUser, JSON.stringify(tweet), options)
             .map(res => res.json() || {});
     }
 
-    public getAllTweets(idUser) {
+    public getAllTweets(idUser: string) {
         return this._http.get('https://paradigmeinternetnode.herokuapp.com/utilisateurs/tweets/' + idUser)
             .map(res => res.json() || {});
     }
 
-    public getTweet(idUser, idTweet) {
+    public getTweet(idUser: string, idTweet: string) {
         return this._http.get('https://paradigmeinternetnode.herokuapp.com/utilisateurs/tweet/' + idUser + '/' + idTweet)
             .map(res => res.json() || {});
     }
 
-    public deleteTweet(idUser, idTweet) {
+    public deleteTweet(idUser: string, idTweet: string) {
         return this._http.delete('https://paradigmeinternetnode.herokuapp.com/utilisateurs/tweet/' + idUser + '/' + idTweet)
             .map(res => res.json() || {});
     }
 
-    public getRetweets(idUser) {
+    public getRetweets(idUser: string) {
         return this._http.get('https://paradigmeinternetnode.herokuapp.com/utilisateurs/retweets/' + idUser)
             .map(res => res.json() || {});
     }
 
-    public putRetweet(idUser, tweet) {
+    public putRetweet(idUser: string, tweet: string) {
         let headers = new Headers({ 'Content-Type': 'application/json' });
         let options = new RequestOptions({ headers: headers });
         return this._http.post('https://paradigmeinternetnode.herokuapp.com/users/login', JSON.stringify({ tweet }), options)
             .map(res => res.json() || {});
     }
 
-    public deleteRetweet(idUser, idRetweet) {
+    public deleteRetweet(idUser: string, idRetweet: string) {
         return this._http.delete('https://paradigmeinternetnode.herokuapp.com/utilisateurs/retweet/' + idUser + idRetweet)
             .map(res => res.json() || {});
     }

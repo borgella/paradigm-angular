@@ -12,7 +12,7 @@ export class SuggestionsComponent {
 
   constructor(private _httpservice: HttpService, private auth: AppProfileService, protected _auth0: Auth0HttpService) { }
 
-  public subscribeToUser(user) {
+  public subscribeToUser(user: any) {
     this._httpservice.putAbonnement(this.auth.user._id, user._id).subscribe((res) => {
 
       this._httpservice.getAbonnements(this.auth.user._id).subscribe((response) => {
