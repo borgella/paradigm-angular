@@ -1,7 +1,7 @@
 import { Directive, ElementRef } from '@angular/core';
 
 @Directive({
-    selector: '[myAppDirective]'
+    selector: '[appMyAppDirective]'
 })
 export class AppDirective {
 

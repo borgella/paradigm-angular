@@ -14,7 +14,7 @@
           <input size="60" maxlength="255" class="form-control" placeholder="Password" formControlName="password" id="UserRegistration_password"
             type="password">
         </div>
-        <p myAppDirective *ngIf="error"> {{error.body}}</p>
+        <p appMyAppDirective *ngIf="error"> {{error.body}}</p>
         <div class="row">
           <div class="col-md-12">
             <button class="btn-u pull-left" type="submit" [disabled]="!userform.valid">Login</button>

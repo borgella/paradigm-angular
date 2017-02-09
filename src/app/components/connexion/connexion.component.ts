@@ -46,7 +46,7 @@ export class ConnexionComponent implements OnInit {
     this.resetTheForm();
   }
 
-  public resetTheForm() {
+  private resetTheForm() {
     this.userform.reset();
   }
 

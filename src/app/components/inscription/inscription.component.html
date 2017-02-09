@@ -11,25 +11,25 @@
                 <input size="60" maxlength="255" class="form-control" placeholder="First Name only, no middle name please" formControlName="firstname" id="UserRegistration_username"
                   type="text">
               </div>
-              <p myAppDirective *ngIf="error"> First Name required characters only, no space.</p>
+              <p appMyAppDirective *ngIf="error"> First Name required characters only, no space.</p>
               <div class="input-group margin-bottom-20">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-user mycolor"></i></span>
                 <input size="60" maxlength="255" class="form-control" placeholder="Last Name" formControlName="lastname" id="UserRegistration_lname"
                   type="text">
               </div>
-               <p myAppDirective *ngIf="error"> Last name required characters only.</p>
+               <p appMyAppDirective *ngIf="error"> Last name required characters only.</p>
               <div class="input-group margin-bottom-20">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-user mycolor"></i></span>
                 <input size="60" maxlength="255" class="form-control" placeholder="Email address example: example@mail.com" formControlName="email" id="UserRegistration_fname"
                   type="text">
               </div>
-               <p myAppDirective *ngIf="error"> {{error.body}}</p>
+               <p appMyAppDirective *ngIf="error"> {{error.body}}</p>
               <div class="input-group margin-bottom-20">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-lock mycolor"></i></span>  
                 <input size="60" maxlength="255" class="form-control" placeholder="Password required: UpperCase, Number" formControlName="password" id="UserRegistration_password"
                   type="password">
               </div>
-               <p myAppDirective *ngIf="error"> Password should contains at least an UpperCase letter and one number.</p>
+               <p appMyAppDirective *ngIf="error"> Password should contains at least an UpperCase letter and one number.</p>
               <div class="row">
                 <div class="col-md-12">
                   <button class="btn-u pull-left" type="submit" [disabled]="!userform.valid">Sign Up</button>

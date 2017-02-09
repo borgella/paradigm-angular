@@ -20,7 +20,7 @@ export class InscriptionFormComponent implements OnInit {
   constructor(private _formbuilder: FormBuilder, private _httpservice: HttpService, private auth_profil: AppProfileService,
     private auth0: Auth0HttpService) { this.error = null; }
 
-  ngOnInit() {
+  public ngOnInit() {
     this.userform = this._formbuilder.group({
       firstname: ['', Validators.required],
       lastname: ['', Validators.required],
@@ -30,7 +30,7 @@ export class InscriptionFormComponent implements OnInit {
   }
 
 
-  saveUser() {
+  public saveUser() {
     this._httpservice.signup(this.userform.value)
       .subscribe((response) => {
         this.user = new User(response.body, response.token);
@@ -51,7 +51,7 @@ export class InscriptionFormComponent implements OnInit {
   }
 
 
-  resetTheForm() {
+  private resetTheForm() {
     this.userform.reset();
   }
 
