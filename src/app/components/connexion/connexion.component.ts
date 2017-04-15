@@ -46,6 +46,10 @@ export class ConnexionComponent implements OnInit {
     this.resetTheForm();
   }
 
+  public getUserFormValidation(): boolean {
+    return this.userform.valid;
+  }
+
   private resetTheForm() {
     this.userform.reset();
   }

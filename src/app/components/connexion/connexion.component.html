@@ -17,7 +17,7 @@
         <p appMyAppDirective *ngIf="error"> {{error.body}}</p>
         <div class="row">
           <div class="col-md-12">
-            <button class="btn-u pull-left" type="submit" [disabled]="!userform.valid">Login</button>
+            <button class="btn-u pull-left" type="submit" [disabled]="!getUserFormValidation()">Login</button>
           </div>
         </div>
       </div>
